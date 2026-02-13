@@ -155,9 +155,47 @@ button:hover {
 <div class="fadeScreen"></div>
 
 <!-- Music -->
-<audio id="music" autoplay loop>
+<audio id="music" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
+
+<!-- Optional Play Button -->
+<button id="playMusicBtn" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    z-index: 30;
+">Play Music 🎵</button>
+
+<script>
+// Get music element
+const music = document.getElementById('music');
+const playBtn = document.getElementById('playMusicBtn');
+
+// Try autoplay muted first
+music.muted = true;
+music.play().then(() => {
+    music.muted = false; // unmute if allowed
+}).catch(() => {
+    console.log('Autoplay blocked, waiting for user interaction');
+    // Show play button
+    playBtn.style.display = 'block';
+});
+
+// Play button click
+playBtn.addEventListener('click', () => {
+    music.play();
+    music.muted = false;
+    playBtn.style.display = 'none';
+});
+</script>
 
 <div class="center">
     <h1>Teju, Will you be my Valentine??</h1>
@@ -262,4 +300,5 @@ function launchConfetti() {
 
 </body>
 </html>
+
 
