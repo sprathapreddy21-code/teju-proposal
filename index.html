@@ -146,6 +146,20 @@ button:hover {
 <div class="center">
     <h1>Teju, Will you be my Valentine??</h1>
 
+    // Yes Button
+function sayYes() {
+    document.getElementById("finalMessage").style.display = "block";
+    launchConfetti();
+}
+
+// No Button - Runaway
+function runAway() {
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.position = "absolute";
+    noBtn.style.top = Math.random() * 70 + "%";
+    noBtn.style.left = Math.random() * 70 + "%";
+}
+    
     <div id="typewriter"></div>
 
     <div id="buttons" style="display:none;">
@@ -162,7 +176,8 @@ button:hover {
 
 <script>
 // Typewriter Effect
-const text = "In a world full of ordinary moments...\nYou became my extraordinary one.\nYou make my silence peaceful,\nand my chaos beautiful. Most importantly you understand me entirely so...";
+const text = "In a world full of ordinary moments...\nYou became my extraordinary one.\nYou make my silence peaceful,\nand my chaos beautiful. 
+    Most importantly you understand me Completely...";
 let index = 0;
 
 function typeWriter() {
@@ -177,20 +192,6 @@ function typeWriter() {
 }
 
 setTimeout(typeWriter, 2000);
-
-// Yes Button
-function sayYes() {
-    document.getElementById("finalMessage").style.display = "block";
-    launchConfetti();
-}
-
-// No Button - Runaway
-function runAway() {
-    const noBtn = document.getElementById("noBtn");
-    noBtn.style.position = "absolute";
-    noBtn.style.top = Math.random() * 70 + "%";
-    noBtn.style.left = Math.random() * 70 + "%";
-}
 
 // Floating Roses & Hearts
 function createFalling() {
@@ -246,3 +247,4 @@ function launchConfetti() {
 
 </body>
 </html>
+
