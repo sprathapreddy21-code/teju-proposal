@@ -2,253 +2,246 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>For My Teju ❤️</title>
+<title>To my Teju ❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
+/* General Styles */
 body {
-  margin:0;
-  padding:0;
-  overflow:hidden;
-  font-family: 'Georgia', serif;
-  background: radial-gradient(circle at bottom, #0d1b2a, #000814);
-  color:white;
-  text-align:center;
+    margin: 0;
+    padding: 0;
+    background: black;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    height: 100vh;
 }
 
-/* Stars */
-.star {
-  position: fixed;
-  width: 2px;
-  height: 2px;
-  background: white;
-  animation: twinkle 2s infinite alternate;
-}
-@keyframes twinkle {
-  from {opacity:0.3;}
-  to {opacity:1;}
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 80%;
 }
 
-/* Cinematic Intro */
-#intro {
-  position: fixed;
-  width:100%;
-  height:100%;
-  background:black;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:40px;
-  letter-spacing:3px;
-  animation: zoomIntro 5s forwards;
-  z-index:10;
-}
-@keyframes zoomIntro {
-  0% {transform: scale(1); opacity:1;}
-  100% {transform: scale(2); opacity:0;}
+/* Main Heading */
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 55px;
+    margin-bottom: 20px;
+    line-height: 1.2;
 }
 
-/* Letter */
-.letter {
-  display:none;
-  padding:40px;
-  max-width:800px;
-  margin:auto;
-  animation:fadeIn 3s forwards;
-}
-@keyframes fadeIn {
-  from{opacity:0;}
-  to{opacity:1;}
+/* Typewriter Text */
+#typewriter {
+    font-size: 22px;
+    line-height: 1.6;
+    min-height: 100px;
 }
 
-/* Name Reveal */
-#nameReveal {
-  font-size:50px;
-  opacity:0;
-  animation: glowName 3s forwards;
+#typewriter::after {
+    content: '|';
+    animation: blink 1s infinite;
 }
-@keyframes glowName {
-  0% {opacity:0; text-shadow:none;}
-  100% {opacity:1; text-shadow:0 0 20px pink,0 0 40px hotpink;}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
 }
 
 /* Buttons */
 button {
-  background:#ff4d6d;
-  color:white;
-  padding:12px 25px;
-  border:none;
-  border-radius:25px;
-  font-size:18px;
-  cursor:pointer;
-  margin:10px;
+    margin: 15px;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: 2px solid white;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.4s;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Slideshow */
-#slideshow {
-  width:300px;
-  height:300px;
-  margin:20px auto;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 0 20px pink;
-}
-#slideshow img {
-  width:100%;
-  height:100%;
-  object-fit:cover;
+button:hover {
+    background: white;
+    color: black;
 }
 
-/* Ring */
-#ringPopup {
-  display:none;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%) scale(0);
-  font-size:100px;
-  animation:ringPop 1s forwards;
-}
-@keyframes ringPop {
-  to {transform:translate(-50%,-50%) scale(1);}
+#finalMessage {
+    display: none;
+    font-size: 28px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 2s ease-in-out;
 }
 
-/* Mrs reveal */
-#finalReveal {
-  display:none;
-  font-size:60px;
-  margin-top:30px;
-  animation:glowMrs 2s infinite alternate;
-}
-@keyframes glowMrs {
-  from{text-shadow:0 0 10px pink;}
-  to{text-shadow:0 0 30px hotpink;}
+/* Fade In Effect */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
-/* Fireworks */
-.firework {
-  position:fixed;
-  width:6px;
-  height:6px;
-  border-radius:50%;
-  animation:explode 1s ease-out forwards;
+/* Falling Roses & Hearts with Sway */
+.falling {
+    position: absolute;
+    top: -50px;
+    font-size: 24px;
+    animation: fall linear infinite, sway ease-in-out infinite alternate;
 }
-@keyframes explode {
-  to {transform:scale(20); opacity:0;}
+
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+}
+
+@keyframes sway {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(20px); }
+}
+
+/* Fade Screen */
+.fadeScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 10;
+    animation: fadeOut 4s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    100% { opacity: 0; visibility: hidden; }
+}
+
+/* Confetti */
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: 0.8;
+    transform: rotate(0deg);
+    pointer-events: none;
+    z-index: 20;
 }
 </style>
 </head>
 
 <body>
 
-<div id="intro">A Love Written In The Stars ✨</div>
+<div class="fadeScreen"></div>
 
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mp3">
+<!-- Music -->
+<audio id="music" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="letter" id="letter">
+<div class="center">
+    <h1>Teju, Will you be my Valentine??</h1>
 
-  <div id="nameReveal">Teju ❤️</div>
+    <div id="typewriter"></div>
 
-  <p style="margin-top:20px;font-size:20px;">
-    From the moment you walked into my life,<br>
-    everything changed.<br><br>
-    You are my forever.
-  </p>
+    <div id="buttons" style="display:none;">
+        <button onclick="sayYes()">Yes ❤️</button>
+        <button id="noBtn" onmouseover="runAway()">No 😏</button>
+    </div>
 
-  <div id="slideshow">
-    <!-- Replace with your real photos -->
-    <img id="slideImg" src="photo1.jpg">
-  </div>
-
-  <button onclick="showValentine()">Click Here My Love 💍</button>
-
-  <div id="valentineSection" style="display:none;">
-    <h2>Will you be my Valentine? ❤️</h2>
-    <button onclick="yesAnswer()">Yes 💖</button>
-    <button id="noBtn">No 😜</button>
-  </div>
-
-  <div id="loveTimer"></div>
-  <div id="finalReveal">Mrs. Pratap 💖</div>
-
+    <div id="finalMessage">
+        I promise to choose you —<br>
+        today, tomorrow, and always.<br>
+        I Love You Teju ❤️
+    </div>
 </div>
 
-<div id="ringPopup">💍</div>
-
 <script>
+// Typewriter Effect
+const text = "In a world full of ordinary moments...\nYou became my extraordinary one.\nYou make my silence peaceful,\nand my chaos beautiful. Most importantly you understand me entirely so...";
+let index = 0;
 
-/* Stars generator */
-for(let i=0;i<150;i++){
-  let star=document.createElement("div");
-  star.className="star";
-  star.style.top=Math.random()*100+"vh";
-  star.style.left=Math.random()*100+"vw";
-  document.body.appendChild(star);
+function typeWriter() {
+    if (index < text.length) {
+        const char = text.charAt(index) === "\n" ? "<br>" : text.charAt(index);
+        document.getElementById("typewriter").innerHTML += char;
+        index++;
+        setTimeout(typeWriter, 40);
+    } else {
+        document.getElementById("buttons").style.display = "block";
+    }
 }
 
-/* Intro */
-setTimeout(()=>{
-  document.getElementById("intro").style.display="none";
-  document.getElementById("letter").style.display="block";
-  document.getElementById("bgMusic").play();
-},5000);
+setTimeout(typeWriter, 2000);
 
-/* Slideshow */
-const images=["photo1.jpg","photo2.jpg","photo3.jpg"];
-let index=0;
-setInterval(()=>{
-  index=(index+1)%images.length;
-  document.getElementById("slideImg").src=images[index];
-},3000);
-
-/* Valentine */
-function showValentine(){
-  document.getElementById("valentineSection").style.display="block";
+// Yes Button
+function sayYes() {
+    document.getElementById("finalMessage").style.display = "block";
+    launchConfetti();
 }
 
-/* Yes */
-function yesAnswer(){
-  document.getElementById("ringPopup").style.display="block";
-  launchFireworks();
-  document.getElementById("finalReveal").style.display="block";
+// No Button - Runaway
+function runAway() {
+    const noBtn = document.getElementById("noBtn");
+    noBtn.style.position = "absolute";
+    noBtn.style.top = Math.random() * 70 + "%";
+    noBtn.style.left = Math.random() * 70 + "%";
 }
 
-/* Mobile + Desktop No escape */
-const noBtn=document.getElementById("noBtn");
-function moveNo(){
-  noBtn.style.position="absolute";
-  noBtn.style.left=Math.random()*80+"vw";
-  noBtn.style.top=Math.random()*80+"vh";
-}
-noBtn.addEventListener("mouseover",moveNo);
-noBtn.addEventListener("touchstart",moveNo);
+// Floating Roses & Hearts
+function createFalling() {
+    const symbols = ["🌹","❤️","💖","💘"];
+    const elem = document.createElement("div");
+    elem.classList.add("falling");
+    elem.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+    elem.style.left = Math.random() * 100 + "vw";
+    elem.style.fontSize = (Math.random() * 24 + 16) + "px";
+    elem.style.animationDuration = (Math.random() * 3 + 4) + "s, " + (Math.random() * 2 + 2) + "s";
+    elem.style.animationDelay = "0s, 0s";
+    document.body.appendChild(elem);
 
-/* Fireworks */
-function launchFireworks(){
-  const colors=["#ff0","#ff4d6d","#00f","#0f0","#ff8fab"];
-  for(let i=0;i<40;i++){
-    let fw=document.createElement("div");
-    fw.className="firework";
-    fw.style.background=colors[Math.floor(Math.random()*colors.length)];
-    fw.style.left=Math.random()*100+"vw";
-    fw.style.top=Math.random()*100+"vh";
-    document.body.appendChild(fw);
-    setTimeout(()=>fw.remove(),1000);
-  }
+    setTimeout(() => {
+        elem.remove();
+    }, 7000);
 }
 
-/* Love timer */
-const startDate=new Date("2024-05-01"); // change date
-function updateTimer(){
-  const now=new Date();
-  const diff=now-startDate;
-  const days=Math.floor(diff/(1000*60*60*24));
-  document.getElementById("loveTimer").innerHTML=
-  `Loving you for ${days} days ❤️`;
-}
-setInterval(updateTimer,1000);
+setInterval(createFalling, 100);
 
+// Confetti on Yes
+function launchConfetti() {
+    const colors = ["#ff4d6d","#ffb6c1","#ff69b4","#ffe4e1"];
+    for(let i=0; i<150; i++){
+        const confetti = document.createElement("div");
+        confetti.classList.add("confetti-piece");
+        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.left = Math.random() * window.innerWidth + "px";
+        confetti.style.top = Math.random() * window.innerHeight + "px";
+        confetti.style.width = Math.random()*8 + 5 + "px";
+        confetti.style.height = confetti.style.width;
+        confetti.style.transform = `rotate(${Math.random()*360}deg)`;
+        document.body.appendChild(confetti);
+
+        let top = parseFloat(confetti.style.top);
+        let left = parseFloat(confetti.style.left);
+        const speedX = (Math.random()-0.5) * 5;
+        const speedY = Math.random() * 5 + 2;
+        const interval = setInterval(() => {
+            top += speedY;
+            left += speedX;
+            confetti.style.top = top + "px";
+            confetti.style.left = left + "px";
+        }, 20);
+
+        setTimeout(() => {
+            clearInterval(interval);
+            confetti.remove();
+        }, 4000);
+    }
+}
 </script>
 
 </body>
